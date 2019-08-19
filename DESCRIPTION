@@ -19,7 +19,7 @@ Description: As a successor of the packages 'BatchJobs' and 'BatchExperiments',
     large-scale computer experiments in a well-organized and reproducible way.
 License: LGPL-3
 Encoding: UTF-8
-Imports:
+Depends:
     data.table,
     stringr,
     devtools,
