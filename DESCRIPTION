@@ -1,0 +1,30 @@
+Package: batchtoolscc
+Title: Batchtools fine-tuned for Compute Canada HPC Systems
+Version: 1.0.0
+Authors@R: 
+    person(given = "Konstantinos",
+           family = "Kyriakidis",
+           email = "kyriakidk@pharm.auth.gr",
+           role = c("aut", "cre")
+           )
+Description: As a successor of the packages 'BatchJobs' and 'BatchExperiments',
+    this package provides a parallel implementation of the Map function for high
+    performance computing systems managed by schedulers 'IBM Spectrum LSF'
+    (<https://www.ibm.com/us-en/marketplace/hpc-workload-management>),
+    'OpenLava' (<http://www.openlava.org/>), 'Univa Grid Engine'/'Oracle Grid
+    Engine' (<http://www.univa.com/>), 'Slurm' (<http://slurm.schedmd.com/>),
+    'TORQUE/PBS'
+    (<http://www.adaptivecomputing.com/products/open-source/torque/>), or
+    'Docker Swarm' (<https://docs.docker.com/swarm/>).
+    A multicore and socket mode allow the parallelization on a local machines,
+    and multiple machines can be hooked up via SSH to create a makeshift
+    cluster. Moreover, the package provides an abstraction mechanism to define
+    large-scale computer experiments in a well-organized and reproducible way.
+License: LGPL-3
+Encoding: UTF-8
+LazyData: true
+Imports:
+    data.table,
+    stringr,
+    devtools,
+    batchtools
