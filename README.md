@@ -25,7 +25,7 @@ install.packages("devtools")
 
 Install batchtools_cc package, specifically fine-tuned to work with Compute Canada HPC systems:
 ```{R}
-install_github("kokyriakidis/batchtools_cc")
+install_github("kokyriakidis/batchtoolscc")
 ```
 
 # Preparing and submitting a job with batchtools
@@ -56,9 +56,9 @@ R
 
 library(devtools)
 
-install_github("kokyriakidis/batchtools_cc")
+install_github("kokyriakidis/batchtoolscc")
 
-library(batchtools)
+library(batchtoolscc)
 
 ## To start again from scratch, manually remove the 'test' folder.
 reg <- makeRegistry('test', seed=123)
@@ -79,7 +79,7 @@ reduceResultsList(reg=reg)
 
 1)  Load the package 
 ```
-library(batchtools)
+library(batchtoolscc)
 ``` 
 
 2)  Create a registry called test
@@ -179,9 +179,9 @@ R
 
 library(devtools)
 
-install_github("kokyriakidis/batchtools_cc")
+install_github("kokyriakidis/batchtoolscc")
 
-library(batchtools)
+library(batchtoolscc)
 
 library(PopSV)
 
