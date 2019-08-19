@@ -20,7 +20,6 @@ Description: As a successor of the packages 'BatchJobs' and 'BatchExperiments',
 License: LGPL-3
 Encoding: UTF-8
 Imports:
-    R (>= 3.0.0),
     data.table (>= 1.11.2),
     stringr,
     devtools,
