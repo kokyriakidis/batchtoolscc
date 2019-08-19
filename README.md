@@ -1,5 +1,5 @@
 # batchtoolscc
-Batchtools Fine-Tuned for Compute Canada HPC Systems
+Extension Package for Batchtools. Fine-Tuned for Compute Canada HPC Systems
 
 [![JOSS Publicatoin](http://joss.theoj.org/papers/10.21105/joss.00135/status.svg)](https://doi.org/10.21105/joss.00135)
 [![CRAN Status Badge](http://www.r-pkg.org/badges/version/batchtools)](https://cran.r-project.org/package=batchtools)
