@@ -135,8 +135,11 @@ install.packages("devtools")
 Some Bioconductor packages are also necessary and not installed automatically. Running the following command should be sufficient :
 
 ```
-source("http://bioconductor.org/biocLite.R")
-biocLite(c("BSgenome.Hsapiens.UCSC.hg19", "Rsamtools", "DNAcopy", "rtracklayer"))
+if (!requireNamespace("BiocManager", quietly = TRUE))
+    install.packages("BiocManager")
+BiocManager::install()
+
+BiocManager::install(c("BSgenome.Hsapiens.UCSC.hg19", "Rsamtools", "DNAcopy", "rtracklayer"))
 ```
 
 **To use hg38 instead of hg19 install** ```BSgenome.Hsapiens.UCSC.hg38```.
