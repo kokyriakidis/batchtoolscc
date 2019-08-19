@@ -1,8 +1,6 @@
 # batchtoolscc
 Batchtools Fine-Tuned for Compute Canada HPC Systems
 
-# batchtools_cc
-
 [![JOSS Publicatoin](http://joss.theoj.org/papers/10.21105/joss.00135/status.svg)](https://doi.org/10.21105/joss.00135)
 [![CRAN Status Badge](http://www.r-pkg.org/badges/version/batchtools)](https://cran.r-project.org/package=batchtools)
 [![Build Status](https://travis-ci.org/mllg/batchtools.svg?branch=master)](https://travis-ci.org/mllg/batchtools)
