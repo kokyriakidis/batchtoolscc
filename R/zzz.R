@@ -42,7 +42,7 @@
 <%= if (array.jobs) sprintf(\"#SBATCH --array=1-%i\", nrow(jobs)) else \"\" %>\n\n \
 ## Initialize work environment like\n \
 ## source /etc/profile\n \
-## module load nixpkgs/16.09 gcc/7.3.0  r/3.6.0 \
+module load nixpkgs/16.09 gcc/7.3.0  r/3.6.0 \
 ## Export value of DEBUGME environemnt var to slave\n \
 export DEBUGME=<%= Sys.getenv(\"DEBUGME\") %>\n\n \
 ## Run R:\n \
