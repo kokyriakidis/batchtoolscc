@@ -69,6 +69,8 @@ reg <- makeRegistry('test', seed=123)
 btlapply(1:2, test.f, resources=list(walltime='10:00', cores=1), reg=reg)
 ```
 
+Otherwise, you can mannually run each step using the following commands:
+
 ```
 module load nixpkgs/16.09 gcc/7.3.0  r/3.6.0
 
