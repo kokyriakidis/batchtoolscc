@@ -91,9 +91,13 @@ test.f <- function(ii){
 }
 
 batchMap(reg=reg, test.f, 1:2)
+
 submitJobs(reg=reg, ids=findJobs(reg=reg), resources=list(walltime='10:00', cores=1))
+
 waitForJobs(reg=reg, sleep=10)
+
 getStatus(reg=reg)
+
 reduceResultsList(reg=reg)
 ```
 
