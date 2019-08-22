@@ -15,7 +15,7 @@ Main features of `batchtools` include:
 * Reproducibility: Every computational part has an associated seed stored in a data base which ensures reproducibility even when the underlying batch system changes
 * Abstraction: The code layers for algorithms, experiment definitions and execution are cleanly separated and allow to write readable and maintainable code to manage large scale computer experiments
 
-**The most important feature of batchtoolscc package is that you do not have to configure it for your Compute Canada HPC system. Everything is automatically set and ready to run.**
+**The most important feature of batchtoolscc extension package is that you do not have to configure it for your Compute Canada HPC system. Everything is automatically set and ready to run.**
 
 # Installation
 Install the stable release of devtools:
