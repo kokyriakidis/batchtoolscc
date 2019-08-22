@@ -7,7 +7,7 @@ Extension Package for Batchtools. Fine-Tuned for Compute Canada HPC Systems
 [![Build Status](https://ci.appveyor.com/api/projects/status/ypp14tiiqfhnv92k/branch/master?svg=true)](https://ci.appveyor.com/project/mllg/batchtools/branch/master)
 [![Coverage Status](https://img.shields.io/coveralls/mllg/batchtools.svg)](https://coveralls.io/r/mllg/batchtools?branch=master)
 
-`Batchtoolscc` is an extension package of [Batchtools](https://mllg.github.io/batchtools/index.html) fine-tuned in order to work optimally and with minimal effort from the end user in Compute Canada HPC Systems. The main package, `batchtools`, provides a parallel implementation of Map for high performance computing systems managed by schedulers like Slurm, Sun Grid Engine, OpenLava, TORQUE/OpenPBS, Load Sharing Facility (LSF) or Docker Swarm (see the setup section in the [vignette](https://mllg.github.io/batchtools/articles/batchtools.html)). 
+**`Batchtoolscc` is an extension package of [Batchtools](https://mllg.github.io/batchtools/index.html) fine-tuned in order to work optimally and with minimal effort from the end user in Compute Canada HPC Systems.** The main package, `batchtools`, provides a parallel implementation of Map for high performance computing systems managed by schedulers like Slurm, Sun Grid Engine, OpenLava, TORQUE/OpenPBS, Load Sharing Facility (LSF) or Docker Swarm (see the setup section in the [vignette](https://mllg.github.io/batchtools/articles/batchtools.html)). 
 
 Main features of `batchtools` include:
 * Convenience: All relevant batch system operations (submitting, listing, killing) are either handled internally or abstracted via simple R functions
