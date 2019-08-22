@@ -49,6 +49,26 @@ Useful functions:
 
 It's a good idea to check that everything is configured properly before trying to run the pipeline. To test that sending jobs works you could try running the following commands:
 
+**If you are absolutely sure that your function works, you can take a shortcut and use `batchtoolscc` in an `lapply` fashion using [btlapply()](https://mllg.github.io/batchtools/reference/btlapply). This function creates a temporary registry (but you may also pass one yourself), calls [batchMap()](https://mllg.github.io/batchtools/reference/batchMap.html), wait for the jobs to terminate with [waitForJobs()](https://mllg.github.io/batchtools/reference/waitForJobs) and then uses [reduceResultsList()](https://mllg.github.io/batchtools/reference/reduceResultsList) to return the results.**
+
+```
+module load nixpkgs/16.09 gcc/7.3.0  r/3.6.0
+
+R
+
+library(devtools)
+
+install_github("kokyriakidis/batchtoolscc")
+
+library(batchtoolscc)
+
+## To start again from scratch, manually remove the 'test' folder.
+reg <- makeRegistry('test', seed=123)
+## reg = loadRegistry('test', writeable=TRUE) ## If the registry has already been created before
+
+btlapply(1:2, test.f, resources=list(walltime='10:00', cores=1), reg=reg)
+```
+
 ```
 module load nixpkgs/16.09 gcc/7.3.0  r/3.6.0
 
