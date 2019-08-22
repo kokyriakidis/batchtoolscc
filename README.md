@@ -49,7 +49,7 @@ Useful functions:
 
 It's a good idea to check that everything is configured properly before trying to run the pipeline. To test that sending jobs works you could try running the following commands:
 
-**If you are absolutely sure that your function works, you can take a shortcut and use `batchtoolscc` in an `lapply` fashion using [btlapply()](https://mllg.github.io/batchtools/reference/btlapply). You create first the registry and this function calls [batchMap()](https://mllg.github.io/batchtools/reference/batchMap.html), wait for the jobs to terminate with [waitForJobs()](https://mllg.github.io/batchtools/reference/waitForJobs) and then uses [reduceResultsList()](https://mllg.github.io/batchtools/reference/reduceResultsList) to return the results.**
+**If you are absolutely sure that your function works, you can take a shortcut and use `batchtoolscc` in an `lapply` fashion using [btlapply()](https://mllg.github.io/batchtools/reference/btlapply). You have to create first the registry and this function calls [batchMap()](https://mllg.github.io/batchtools/reference/batchMap.html), wait for the jobs to terminate with [waitForJobs()](https://mllg.github.io/batchtools/reference/waitForJobs) and then uses [reduceResultsList()](https://mllg.github.io/batchtools/reference/reduceResultsList) to return the results.**
 
 ```
 module load nixpkgs/16.09 gcc/7.3.0  r/3.6.0
