@@ -17,7 +17,7 @@
   #' @importFrom stringr str_sub
   account_default_name_final <- stringr::str_sub(account_default_name_mixed, 1, -5)
   
-  packageStartupMessage("\n\nWelcome to Batchtoolscc. Your default Slurm job account name is set to ", account_default_name_final, "\n\n")
+  packageStartupMessage("\n\nWelcome to Batchtoolscc. Your default Slurm job account name is set to " ", account_default_name_final, " "\n\n")
 
   max.concurrent.jobs_ammount <- "50L"
   batchtools.conf.R_filename <- "batchtools.conf.R"
