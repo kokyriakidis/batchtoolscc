@@ -13,7 +13,7 @@
   nodes_ammount <- "1L"
 
   number_of_accounts <- system("sacctmgr -np  list account  WithAssoc Users=$USER | wc -l", intern = TRUE)
-  number_of_accounts <- as.numeric(lines)
+  number_of_accounts <- as.numeric(number_of_accounts)
 
   account_levelfs <- c()
   max_account_levelfs <- 0
