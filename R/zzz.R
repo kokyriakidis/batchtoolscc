@@ -43,7 +43,7 @@
   #' @importFrom stringr str_sub
   account_default_name_final <- stringr::str_sub(max_account_name, 1, -5)
   
-  packageStartupMessage("\n\nWelcome to Batchtoolscc, an extension package fine-tuned fo Compute Canada!\n\nYour default Slurm job account name is set to '", account_default_name_final, "' having the highest LevelFs '", max_account_levelfs , "'\n\n")
+  packageStartupMessage("\n\nWelcome to Batchtoolscc!\n\nYour default Slurm job account name is set to '", account_default_name_final, "' having the highest LevelFs '", max_account_levelfs , "'\n\n")
 
   max.concurrent.jobs_ammount <- "50L"
   batchtools.conf.R_filename <- "batchtools.conf.R"
