@@ -12,10 +12,36 @@
   ncpus_ammount <- "1L"
   nodes_ammount <- "1L"
 
-  account_default_name_mixed <- system("sacctmgr -np  list account  WithAssoc Users=$USER | grep 'def' | head -n 1 | cut -d'|' -f1", intern = TRUE)
+  number_of_accounts <- system("sacctmgr -np  list account  WithAssoc Users=$USER | wc -l", intern = TRUE)
+  number_of_accounts <- as.numeric(lines)
 
+  account_levelfs <- c()
+  max_account_levelfs <- 0
+  max_account_name <- c()
+
+  for (i in 1:number_of_accounts)
+  {
+	
+	parse_account_names <- system(paste("sacctmgr -np  list account  WithAssoc Users=$USER | head -n", i, "|tail -1 | cut -d'|' -f1"), intern = TRUE)
+
+	parse_account_levelfs <- system(paste("sshare -np -u $USER -A ", parse_account_names, "| tail -n 1  | cut -d'|' -f7") , intern = TRUE)
+	
+	if (parse_account_levelfs == "inf") {
+	parse_account_levelfs <- Inf
+	}
+
+	parse_account_levelfs <- as.numeric(parse_account_levelfs)
+
+
+
+	if (parse_account_levelfs >= max_account_levelfs) {
+	max_account_levelfs <- parse_account_levelfs
+	max_account_name <- parse_account_names
+	}
+  }
+  
   #' @importFrom stringr str_sub
-  account_default_name_final <- stringr::str_sub(account_default_name_mixed, 1, -5)
+  account_default_name_final <- stringr::str_sub(max_account_name, 1, -5)
   
   packageStartupMessage("\n\nWelcome to Batchtoolscc. Your default Slurm job account name is set to '", account_default_name_final, "'\n\n")
 
