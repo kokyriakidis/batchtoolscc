@@ -1,17 +1,23 @@
 .onLoad = function(libname, pkgname) { # nocov start
+  
+  #Get user's working directory
   user_wd <- getwd()
-
+  
+  #Set temp dir as working rdirectory
   setwd(tempdir())
-
+  
+  #Create configuration file inside temp folder
   file.create("batchtools.conf.R")
-
+  
+  #Set default configuration parameters
   template_suffix <- "slurm"
   walltime_time <- "180L"
   memory_ammount <- "4700L"
   ntasks_ammount <- "1L"
   ncpus_ammount <- "1L"
   nodes_ammount <- "1L"
-
+  
+  #Parse the correct account name with the proper levelfs. This account id will be used in the slurm template.
   number_of_accounts <- system("sacctmgr -np  list account  WithAssoc Users=$USER | wc -l", intern = TRUE)
   number_of_accounts <- as.numeric(number_of_accounts)
 
@@ -43,6 +49,7 @@
   #' @importFrom stringr str_sub
   account_default_name_final <- stringr::str_sub(max_account_name, 1, -5)
   
+  #Set welcome message when user loads the package	
   packageStartupMessage("\n\nWelcome to Batchtoolscc!\n\nYour default Slurm job account name is set to '", account_default_name_final, "' having the highest LevelFs '", max_account_levelfs , "'\n\n")
 
   max.concurrent.jobs_ammount <- "50L"
@@ -52,10 +59,12 @@
 
   write(batchtools.conf.R_content, file = batchtools.conf.R_filename)
 
+  #Create slurm template
   batchtools.slurm.tmpl_filename <- "batchtools.slurm.tmpl"
 
   file.create(batchtools.slurm.tmpl_filename)
-
+  
+  #Set slurm tempalate body
   batchtools.slurm.tmpl_content <- "#!/bin/bash\n\n \
 #SBATCH --job-name=<%= job.name %>\n \
 #SBATCH --output=<%= log.file %>\n \
@@ -75,12 +84,14 @@ export DEBUGME=<%= Sys.getenv(\"DEBUGME\") %>\n\n \
 ## Run R:\n \
 ## we merge R output with stdout from SLURM, which gets then logged via --output option\n \
 Rscript -e 'batchtools::doJobCollection(\"<%= uri %>\")'\n"
-
+ 
+  #Create batchtools slurm template
   write(batchtools.slurm.tmpl_content, file = batchtools.slurm.tmpl_filename)
-
+ 
+  #Return to user's login working directory
   setwd(user_wd)
 
-
+  #Tell batchtools to search for the created config and template files in temp directory
   Sys.setenv(R_BATCHTOOLS_SEARCH_PATH = tempdir())
-
+  #Every time the user logs out, these files will be deleted. Every time the user logs in they will be created again in the temp dir.
 }
